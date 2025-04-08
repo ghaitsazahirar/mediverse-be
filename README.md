@@ -44,45 +44,46 @@ Oke sip! Ini aku buatin bagian **Git Flow** untuk dimasukin ke README `mediverse
 
 ### 🌀 Git Flow
 
-Proyek ini mengikuti _Git Flow_ sebagai strategi branching untuk pengembangan yang terstruktur dan kolaboratif. Berikut alur awal penggunaan Git Flow pada proyek ini:
+Proyek ini mengikuti _Git Flow_ sebagai strategi branching untuk pengembangan yang terstruktur dan kolaboratif. Berikut adalah alur awal penggunaan Git Flow pada proyek ini:
 
 1. **Inisialisasi Git Repository**
-   ```
+   ```bash
    git init
    ```
 
 2. **Menambahkan Remote Origin (GitHub)**
-   ```
+   ```bash
    git remote add origin https://github.com/ghaitsazahirar/mediverse-be.git
    ```
 
 3. **Membuat dan Checkout ke Branch `develop`**
-   ```
+   ```bash
    git checkout -b develop
    ```
 
 4. **Menambahkan Semua File dan Commit Awal**
-   ```
+   ```bash
    git add .
    git commit -m "Initial commit"
    ```
 
-5. **Push ke Branch `main` di GitHub**
-   ```
-   git push -u origin main
+5. **Push ke Branch `develop` di GitHub**
+   ```bash
+   git push -u origin develop
    ```
 
 ---
 
 ### 📌 Struktur Branch
 
-Git Flow pada proyek ini mengikuti struktur branch berikut:
+Struktur branching yang digunakan dalam Git Flow pada proyek ini:
 
-- `main` (atau `master`) → versi produksi.
+- `main` → versi produksi (_production-ready_).
 - `develop` → pengembangan aktif.
 - `feature/*` → penambahan fitur baru.
 - `release/*` → persiapan rilis ke `main`.
 - `hotfix/*` → perbaikan cepat pada `main`.
 
-> Branch `feature`, `release`, dan `hotfix` akan selalu di-*merge* ke `develop` (dan `main` jika perlu) sesuai dengan diagram Git Flow berikut:
+> Semua branch `feature`, `release`, dan `hotfix` akan selalu di-*merge* ke `develop`, dan jika sudah siap rilis, akan di-*merge* ke `main` sesuai diagram Git Flow.
 
+---
