@@ -1,5 +1,3 @@
----
-
 ## 🩺 Mediverse Backend
 
 **Mediverse** adalah platform reservasi medis online yang menghubungkan pasien dengan dokter dan fasilitas kesehatan melalui satu aplikasi terpadu.
