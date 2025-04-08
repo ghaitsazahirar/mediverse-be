@@ -38,8 +38,6 @@ go mod tidy                # Inisialisasi dependency Go
 raiden configure           # Konfigurasi Supabase & Raiden
 raiden run                 # Menjalankan server lokal
 
-Oke sip! Ini aku buatin bagian **Git Flow** untuk dimasukin ke README `mediverse-be`, berdasarkan alur kamu waktu awal push ke GitHub dan pakai flow seperti di diagram tadi:
-
 ---
 
 ### 🌀 Git Flow
