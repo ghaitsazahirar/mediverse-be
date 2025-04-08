@@ -1,17 +1,19 @@
+---
+
 # 🩺 Mediverse Backend
 
-Mediverse adalah platform reservasi medis online yang menghubungkan pasien dengan dokter dan fasilitas kesehatan melalui satu aplikasi terpadu.
+**Mediverse** adalah platform reservasi medis online yang menghubungkan pasien dengan dokter dan fasilitas kesehatan melalui satu aplikasi terpadu.
 
-Backend ini dibangun dengan bahasa **Go** menggunakan framework **Raiden**, serta memanfaatkan **Supabase** untuk layanan backend-as-a-service seperti autentikasi dan database.
+Backend ini dibangun dengan bahasa **Go** menggunakan framework **Raiden**, serta memanfaatkan **Supabase** untuk layanan _backend-as-a-service_ seperti autentikasi dan database.
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-- Go (Golang)
-- Raiden Framework
-- Supabase (PostgreSQL, Auth, Storage)
-- GitHub (untuk versioning & kolaborasi)
+- **Go (Golang)**
+- **Raiden Framework**
+- **Supabase** (PostgreSQL, Auth, Storage)
+- **GitHub** (untuk versioning & kolaborasi)
 
 ---
 
@@ -29,20 +31,24 @@ mediverse-be/
 ├── migrations/         # File migrasi database
 ├── go.mod              # Konfigurasi module Go
 └── main.go             # Entry point aplikasi
+```
 
-## Cara Menjalankan Project
+---
+
+## ▶️ Cara Menjalankan Project
+
+```bash
 git clone https://github.com/ghaitsazahirar/mediverse-be.git
 cd mediverse-be
 
 go mod tidy                # Inisialisasi dependency Go
 raiden configure           # Konfigurasi Supabase & Raiden
 raiden run                 # Menjalankan server lokal
+```
 
 ---
 
----
-
-### 🌀 Git Flow
+## 🌀 Git Flow
 
 Proyek ini mengikuti _Git Flow_ sebagai strategi branching untuk pengembangan yang terstruktur dan kolaboratif. Berikut adalah alur awal penggunaan Git Flow pada proyek ini:
 
@@ -84,6 +90,6 @@ Struktur branching yang digunakan dalam Git Flow pada proyek ini:
 - `release/*` → persiapan rilis ke `main`.
 - `hotfix/*` → perbaikan cepat pada `main`.
 
-> Semua branch `feature`, `release`, dan `hotfix` akan selalu di-*merge* ke `develop`, dan jika sudah siap rilis, akan di-*merge* ke `main` sesuai diagram Git Flow.
+> Semua branch `feature`, `release`, dan `hotfix` akan selalu di-*merge* ke `develop`, dan jika sudah siap rilis, akan di-*merge* ke `main` sesuai dengan diagram Git Flow.
 
 ---
