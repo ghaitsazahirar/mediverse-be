@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/sev-2/raiden"
 	"mediversebe/internal/bootstrap"
+
+	"github.com/sev-2/raiden"
 )
 
 func main() {
 	// load configuration
 	config, err := raiden.LoadConfig(nil)
 	if err != nil {
-		raiden.Error("load configuration",err.Error())
+		raiden.Error("load configuration", err.Error())
 	}
 
 	// Setup server

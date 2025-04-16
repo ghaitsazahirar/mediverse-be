@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  title: Mediverse API
+  description: API untuk mengelola data dokter dan jadwal
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8002//rest/v1
+paths:
+  /doctors:
+    get:
+      summary: Mengambil daftar dokter
+      description: Endpoint ini mengembalikan daftar dokter yang terdaftar.
+      responses:
+        '200':
+          description: Daftar dokter berhasil diambil
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    specialty:
+                      type: string
+                example:
+                  - id: "1"
+                    name: "Dr. John Doe"
+                    specialty: "Cardiologist"
+                  - id: "2"
+                    name: "Dr. Jane Smith"
+                    specialty: "Pediatrician"
+        '404':
+          description: Tidak ada dokter ditemukan
+    post:
+      summary: Menambah data dokter
+      description: Endpoint ini digunakan untuk menambah dokter baru.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                specialty:
+                  type: string
+              required:
+                - name
+                - specialty
+            example:
+              name: "Dr. Emily Davis"
+              specialty: "Orthopedist"
+      responses:
+        '201':
+          description: Dokter berhasil ditambahkan
+        '400':
+          description: Bad request, data yang diberikan tidak valid
+  /schedules:
+    get:
+      summary: Mengambil daftar jadwal
+      description: Endpoint ini mengembalikan daftar jadwal yang tersedia.
+      responses:
+        '200':
+          description: Daftar jadwal berhasil diambil
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    doctor_id:
+                      type: string
+                    date:
+                      type: string
+                      format: date
+                    time:
+                      type: string
+                      format: time
+                example:
+                  - doctor_id: "1"
+                    date: "2025-04-16"
+                    time: "10:00"
+                  - doctor_id: "2"
+                    date: "2025-04-16"
+                    time: "14:00"
+        '404':
+          description: Tidak ada jadwal ditemukan
+    post:
+      summary: Menambah jadwal baru
+      description: Endpoint ini digunakan untuk menambah jadwal dokter.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doctor_id:
+                  type: string
+                date:
+                  type: string
+                  format: date
+                time:
+                  type: string
+                  format: time
+              required:
+                - doctor_id
+                - date
+                - time
+            example:
+              doctor_id: "1"
+              date: "2025-04-16"
+              time: "10:00"
+      responses:
+        '201':
+          description: Jadwal berhasil ditambahkan
+        '400':
+          description: Bad request, data yang diberikan tidak valid
+    put:
+      summary: Memperbarui jadwal yang ada
+      description: Endpoint ini digunakan untuk memperbarui jadwal yang sudah ada.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doctor_id:
+                  type: string
+                date:
+                  type: string
+                  format: date
+                time:
+                  type: string
+                  format: time
+            example:
+              doctor_id: "1"
+              date: "2025-04-16"
+              time: "11:00"
+      responses:
+        '200':
+          description: Jadwal berhasil diperbarui
+        '404':
+          description: Jadwal tidak ditemukan
+    patch:
+      summary: Memperbarui sebagian data jadwal
+      description: Endpoint ini digunakan untuk memperbarui sebagian data jadwal.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                time:
+                  type: string
+                  format: time
+            example:
+              date: "2025-04-16"
+              time: "11:30"
+      responses:
+        '200':
+          description: Jadwal berhasil diperbarui sebagian
+        '404':
+          description: Jadwal tidak ditemukan

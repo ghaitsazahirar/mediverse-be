@@ -3,8 +3,36 @@ package bootstrap
 
 import (
 	"github.com/sev-2/raiden/pkg/resource"
+	"mediversebe/internal/types"
 )
 
 func RegisterTypes() {
-	resource.RegisterTypes()
+	resource.RegisterTypes(
+		&types.Addresses{},
+		&types.Doctor{},
+		&types.EPrescriptions{},
+		&types.Facilities{},
+		&types.Patients{},
+		&types.Payments{},
+		&types.Poli{},
+		&types.Reservations{},
+		&types.RoleType{},
+		&types.Roles{},
+		&types.Schedules{},
+		&types.Services{},
+		&types.Users{},
+		&types.Addresses{},
+		&types.Doctor{},
+		&types.EPrescriptions{},
+		&types.Facilities{},
+		&types.Patients{},
+		&types.Payments{},
+		&types.Poli{},
+		&types.Reservations{},
+		&types.RoleType{},
+		&types.Roles{},
+		&types.Schedules{},
+		&types.Services{},
+		&types.Users{},
+	)
 }

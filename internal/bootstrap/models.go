@@ -3,8 +3,22 @@ package bootstrap
 
 import (
 	"github.com/sev-2/raiden/pkg/resource"
+	"mediversebe/internal/models"
 )
 
 func RegisterModels() {
-	resource.RegisterModels()
+	resource.RegisterModels(
+		&models.Addresses{},
+		&models.Doctor{},
+		&models.EPrescriptions{},
+		&models.Facilities{},
+		&models.Patients{},
+		&models.Payments{},
+		&models.Poli{},
+		&models.Reservations{},
+		&models.Roles{},
+		&models.Schedules{},
+		&models.Services{},
+		&models.Users{},
+	)
 }
